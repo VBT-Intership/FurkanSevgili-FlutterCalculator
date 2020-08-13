@@ -59,23 +59,3 @@ class Calculator{
   return double.parse(nums[0]);
   }
 }
-/*
-main(List<String> args) {
-  Calculator calc=new Calculator();
-  print("Yapmak istediğiniz matematiksel işlemi giriniz.\nÖrn: 3+10/2 \n(Çıkmak için 'q' karakteri giriniz.)\nNot: Parantez ve üslü ifade tanınmaz.");
-  while(calc.running)
-  {
-    String str=stdin.readLineSync(encoding: Encoding.getByName('utf-8'));
-    if (str.contains('q')) {//girilen string q içeriyorsa pprogramı durdur.
-      calc.running=false;
-      break;
-    }
-    try {
-    print(calc.hesapla(str));
-    } catch (e) {
-      print("Geçersiz Karakter!");
-      print(e);
-    }
-    print("Yapmak istediğiniz matematiksel işlemi giriniz.");
-  }
-}*/
