@@ -1,9 +1,3 @@
-import 'home_page.dart';
-
-
-
-import 'dart:convert';
-import 'dart:io';
 
 class Calculator{
   String topla(List<String> nums, int a){
@@ -20,12 +14,12 @@ class Calculator{
   }
   double hesapla(String str){
     //Sayılar ve operatörler birbirinden ayrılır.
-    List<String> nums=str.split(new RegExp('([+,*,/,^])'));
-    List<String> oprs=str.split(new RegExp('([0-9,.,-]?)'));
+    List<String> nums=str.split(new RegExp('([+,*,/,-])'));
+    List<String> oprs=str.split(new RegExp('([0-9,.]?)'));
 
     //Listelerde oluşan boşluklar silinir.
     oprs.removeWhere((value) => value == '');
-    nums.removeWhere((value) => value == '');
+    nums.removeWhere((value) => value == '-');
     while (nums.length>1) {
     //Çarpma ve bölme için işlem önceliği
     int a;
@@ -33,7 +27,7 @@ class Calculator{
       case true:
         a=oprs.indexWhere((element) => element=="*"||element=="/");
         break;
-      case false:
+      default:
         a=0;
         break;
     }
