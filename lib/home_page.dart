@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'calculator.dart';
 
 class HomePage extends StatefulWidget {
   State createState()=>new HomePageState();
@@ -8,6 +9,7 @@ class HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     var data=TextEditingController();
+    var calc=new Calculator();
         return new Scaffold(
           appBar: new AppBar(
             title:new Text("Calculator"),
@@ -36,7 +38,7 @@ class HomePageState extends State<HomePage> {
               children: <Widget>[
                 _button("C", ()=>{data.text=""}),
                 _button("0", ()=>{data.text=data.text+"0"}),
-                _button("=", ()=>{/*TODO:Sum*/}),
+                _button("=", ()=>{data.text=calc.hesapla(data.text).toString()}),
                 _button("/", ()=>{data.text=data.text+"/"}),
               ],
             ),
