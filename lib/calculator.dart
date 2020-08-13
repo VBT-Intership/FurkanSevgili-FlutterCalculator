@@ -29,13 +29,15 @@ class Calculator{
     while (nums.length>1) {
     //Çarpma ve bölme için işlem önceliği
     int a;
-    if (oprs.contains('*')){
-      a=oprs.indexOf('*');
-      }
-    else if(oprs.contains('/'))
-      a=oprs.indexOf('/');
-    else
-      a=0;
+    switch(oprs.contains("*")||oprs.contains("/")){
+      case true:
+        a=oprs.indexWhere((element) => element=="*"||element=="/");
+        break;
+      case false:
+        a=0;
+        break;
+    }
+
     //Secilen operatöre göre sayılar üzerinde işlem yapılır.
     switch(oprs[a]){
       case '*':
